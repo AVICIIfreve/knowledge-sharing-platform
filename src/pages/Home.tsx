@@ -12,15 +12,20 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>问题列表</h1>
-      {question.map((q) => (
-        <div key={q.id}>
-          <h2>{q.title}</h2>
-          <p>{q.description}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="p-6 bg-gray-100">
+        <h1 className="text-2xl font-bold text-center">知识分享平台</h1>
+      </div>
+      <div>
+        <h1>问题列表</h1>
+        {/* {question.map((q) => (
+          <div key={q.id}>
+            <h2>{q.title}</h2>
+            <p>{q.description}</p>
+          </div>
+        ))} */}
+      </div>
+    </>
   );
 };
 
