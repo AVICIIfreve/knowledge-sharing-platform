@@ -2,8 +2,8 @@ export interface Question {
     id:number;
     title:string;
     description:string;
-    createdAt:string;
-    author:string;
+    // createdAt:string;
+    // author:string;
 }
 
 export interface User {
