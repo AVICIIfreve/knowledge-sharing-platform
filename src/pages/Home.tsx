@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Question } from "../types";
 import { fetchQuestions } from "../services/api";
 import { data } from "react-router-dom";
+import Nav from "../components/nav";
 
 const Home = () => {
   // 定义状态变量，存储问题列表
@@ -27,8 +28,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="p-6 bg-gray-100 min-h-screen">
-        <h1 className="text-2xl font-bold text-center">知识分享平台</h1>
+      <Nav></Nav>
+      <div className="container mt-5">
+        <h1 className="text-center text-primary mb-4">知识分享平台</h1>
         {/* 显示加载状态 */}
         {isLoading && <p className="text-center text-blue-500">Loding</p>}
         {/* 显示错误信息 */}
@@ -37,15 +39,16 @@ const Home = () => {
 
       {/* 显示问题列表 */}
       {!isLoading && !error && (
-        <div className="space-y-4">
+        <div className="row">
           {questions.length > 0 ? (
             questions.map((q) => (
-              <div
-                key={q.id}
-                className="p-4 bg-white rounded shadow hover:shadow-md transition-shadow"
-              >
-                <h2 className="text-xl font-semibold">{q.title}</h2>
-                <p className="text-gray-600">{q.description}</p>
+              <div key={q.id} className="col-md-6 mb-4">
+                <div className="card shadow-sm">
+                  <div className="card-body">
+                    <h2 className="card-header text-dark">{q.title}</h2>
+                    <p className="card-text">{q.description}</p>
+                  </div>
+                </div>
               </div>
             ))
           ) : (
