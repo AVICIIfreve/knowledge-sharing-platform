@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Question } from "../types";
 import { fetchQuestions } from "../services/api";
 import { data } from "react-router-dom";
-import Nav from "../components/nav";
+import Nav from "../components/Nav";
 
 const Home = () => {
   // 定义状态变量，存储问题列表
