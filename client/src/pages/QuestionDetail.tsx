@@ -9,7 +9,8 @@ export const mockQuestion: Question = {
   description:
     "I am learning React and want to create a login page with a backend.",
   createdAt: "2024-12-05T12:00:00Z",
-  author: "JohnDoe",
+  updatedAt: "2024-12-05T12:00:00Z",
+  author: 1,
 };
 
 export const mockAnswers: Answer[] = [
@@ -17,7 +18,8 @@ export const mockAnswers: Answer[] = [
     id: 1,
     content: "You can use React hooks to manage state and Axios for API calls.",
     author: "JaneSmith",
-    timestamp: "2024-12-05T13:00:00Z",
+    createdAt: "2024-12-05T13:00:00Z",
+    updatedAt: "2024-12-06T14:30:00Z",
     upvotes: 10,
     downvotes: 2,
   },
@@ -25,7 +27,8 @@ export const mockAnswers: Answer[] = [
     id: 2,
     content: "Here is a guide for building a full-stack login system.",
     author: "JohnDoe",
-    timestamp: "2024-12-06T14:30:00Z",
+    createdAt: "2024-12-06T14:30:00Z",
+    updatedAt: "2024-12-06T14:30:00Z",
     upvotes: 5,
     downvotes: 1,
   },
@@ -53,7 +56,7 @@ const QuestionDetail = ({ question, answers }: Props) => {
               <div className="card-body">
                 <p>{answer.content}</p>
                 <div className="text-muted">
-                  By {answer.author} |{answer.timestamp}
+                  By {answer.author} |{answer.createdAt}
                 </div>
                 <button className="btn btn-sm btn-outline-primary me-2">
                   Upovte
