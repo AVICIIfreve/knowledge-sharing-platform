@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import QuestionDetail from "./pages/QuestionDetail";
 import UserProfile from "./pages/UserProfile";
 import { mockQuestion, mockAnswers } from "./pages/QuestionDetail";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           }
         ></Route>
         <Route path="/profile/:username" element={<UserProfile />}></Route>
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
     </>
   );
