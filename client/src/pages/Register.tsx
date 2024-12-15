@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate(); //初始化路由跳转方法
   const [successMessage, setSuccessMessage] = useState(""); // 用于显示成功消息
-
+  const xx = "2";
   //定义表单验证规则
   const validationSchema = Yup.object({
     email: Yup.string().email("请输入有效的邮箱").required("邮箱不能为空"),
