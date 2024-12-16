@@ -11,39 +11,22 @@ const app = express();
 const PORT = process.env.PORT || 5100;
 
 // 中间件
-app.use(express.json());
-app.use(cors());
-
-// 路由
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-//路由挂载
-app.use("/api/auth",authRoutes)
-
-
+//跨域
 app.use(
   cors({
     origin: "http://localhost:3000", // 允许的前端地址
   })
 );
+//将json解析为js对象
+app.use(express.json());
 
+//路由挂载(中间件的特殊形式)
+app.use("/api/auth",authRoutes)
+// 路由
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
-
-//数据库连接
-async function testDatabase() {
-  try {
-    const connection = await pool.getConnection();
-    console.log("Database connection successful!")
-    connection.release();
-  }catch(error){
-    console.error("Database connection failed:",error);
-    process.exit(1);
-  }
-}
-
-testDatabase();
 
 app.get('/users', async(req,res)=>{
   try{

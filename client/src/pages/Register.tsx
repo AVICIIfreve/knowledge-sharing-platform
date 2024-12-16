@@ -55,13 +55,13 @@ const Register = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 col-lg-4">
-              <div className="card shadow-sm">
+              <div className="card shadow-lg">
                 <div className="card-body">
-                  <h1 className="text-center mb-4">用户注册</h1>
+                  <h2 className="text-center mb-4">用户注册</h2>
                   {/* 成功提示框 */}
                   {successMessage && (
                     <div

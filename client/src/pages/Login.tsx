@@ -13,18 +13,17 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        //使用mocky模拟假接口
-        "https://run.mocky.io/v3/216f0131-2230-498b-b7c2-b89877c99a3d",
+        "http://localhost:5000/api/auth/login",
         { email, password }
       );
-      if (response.data.success) {
+      if (response.status === 200) {
+        console.log(response);
         alert("登录成功！");
         navigate("/");
-      } else {
-        setError(response.data.message);
       }
-    } catch (err) {
-      setError("登录失败，请检查网络或稍后重试");
+    } catch (error: any) {
+      console.log(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -38,6 +37,12 @@ const Login = () => {
                 <h2 className="text-center mb-4">用户登录</h2>
                 <form onSubmit={hadleSubmit}>
                   <div className="mb-3">
+                    {error && (
+                      <div className="alert alert-danger" role="alert">
+                        {error}
+                      </div>
+                    )}
+
                     <label htmlFor="email" className="form-label">
                       邮箱地址
                     </label>
