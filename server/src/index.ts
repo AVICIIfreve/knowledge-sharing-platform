@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 //路由挂载
 app.use("/api/auth",authRoutes)
 
+
 app.use(
   cors({
     origin: "http://localhost:3000", // 允许的前端地址
